@@ -67,20 +67,21 @@ canvas {
   width: var(--color-size);
   height: var(--color-size);
   border-radius: 50%;
+  -webkit-box-shadow: 4px 6px 18px -9px rgba(0, 0, 0, 0.41);
+  -moz-box-shadow: 4px 6px 18px -9px rgba(0, 0, 0, 0.41);
+  box-shadow: 4px 6px 18px -9px rgba(0, 0, 0, 0.41);
 }
 
 .random {
-  background: rgb(255, 0, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 0, 0, 1) 0%,
-    rgba(255, 126, 7, 1) 15%,
-    rgba(242, 228, 6, 1) 28%,
-    rgba(5, 232, 11, 1) 41%,
-    rgba(9, 212, 237, 1) 54%,
-    rgba(21, 91, 255, 1) 67%,
-    rgba(123, 56, 191, 1) 84%,
-    rgba(255, 9, 226, 1) 100%,
-    rgba(161, 255, 0, 1) 100%
-  );
+  background-color: var(--color-bg);
+  -webkit-appearance: none;
+  width: var(--color-size);
+  height: var(--color-size);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  margin-left: calc(var(--base-space) * 2);
+}
+
+.random::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
 }
