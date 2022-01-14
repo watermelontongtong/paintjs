@@ -5,6 +5,7 @@ const colors = document.querySelector(".colors");
 const fillBtn = document.querySelector("#fill");
 const saveBtn = document.querySelector("#save");
 const clearBtn = document.querySelector("#clear");
+const randomBtn = document.querySelector("#random");
 
 const CANVAS_WIDTH = 700;
 const CANVAS_HEIGHT = 760;
@@ -42,11 +43,13 @@ function handleRange(event) {
   ctx.lineWidth = size;
 }
 
+function handleRandomBtn(event) {
+  const pickedColor = event.target.value;
+  paintOrFill(pickedColor);
+}
+
 function handleColor(event) {
-  if (event.target.id === "random") {
-    const pickedColor = event.target.value;
-    paintOrFill(pickedColor);
-  } else if (event.target.className === "color") {
+  if (event.target.className === "color static") {
     const chosenColor = event.target.style.backgroundColor;
     paintOrFill(chosenColor);
   }
@@ -108,4 +111,8 @@ if (saveBtn) {
 
 if (clearBtn) {
   clearBtn.addEventListener("click", handleClear);
+}
+
+if (randomBtn) {
+  randomBtn.addEventListener("input", handleRandomBtn);
 }
